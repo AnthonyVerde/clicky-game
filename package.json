@@ -2,6 +2,7 @@
   "name": "clicky-game",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://anthonyverde.github.io/clicky-game/",
   "dependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
@@ -83,7 +84,6 @@
   "bugs": {
     "url": "https://github.com/AnthonyVerde/clicky-game/issues"
   },
-  "homepage": "https://anthonyverde.github.io/clicky-game/",
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
