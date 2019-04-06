@@ -1,0 +1,7 @@
+.Container {
+    background: #ECEFF1;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    overflow: auto;
+  }

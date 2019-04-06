@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import Card from "./components/Card";
 import Container from "./components/Container";
 import Header from "./components/Header";
+import Instructions from "./components/Instructions";
+import Card from "./components/Card";
 import cards from "./cards.json";
 import "./App.css";
 
@@ -48,7 +49,8 @@ class App extends Component {
     return (
       <Container
     >
-        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
+        <Header score={this.state.score} highscore={this.state.highscore}>CLICKY GAME</Header>
+        <Instructions>The goal is to click on all the images below without clicking the same image more than once. To make things trickier, the images are shuffled after each click. Good luck!</Instructions>
         {this.state.cards.map(card => (
           <Card
             clickCount={this.clickCount}
@@ -57,8 +59,7 @@ class App extends Component {
             imageUrl={card.imageUrl}
           />
         ))}
-      </Container
-    >
+      </Container>
     );
   }
 }
