@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import imgCard from "./components/imgCard";
-import gameContainer from "./components/gameContainer";
-import gameHeader from "./components/gameHeader";
+import Card from "./components/Card";
+import Container from "./components/Container";
+import Header from "./components/Header";
 import cards from "./cards.json";
 import "./App.css";
 
@@ -19,10 +19,9 @@ class App extends Component {
         console.log(this.state.highscore);
       });
     }
-    this.state.cards.forEach(imgCard => {
-      imgCard.count = 0;
+    this.state.cards.forEach(card => {
+      card.count = 0;
     });
-
     alert(`Looks like you clicked the same image twice! Start over! \nscore: ${this.state.score}`);
     this.setState({score: 0});
     return true;
@@ -44,23 +43,24 @@ class App extends Component {
       }
     });
   }
-  // Map over this.state.cards and render a imgCard component for each imgCard object
+  // Map over this.state.cards and render a cardCard component for each card object
   render() {
     return (
-      <gameContainer>
-        <gameHeader score={this.state.score} highscore={this.state.highscore}>Clicky Game</gameHeader>
-        {this.state.cards.map(imgCard => (
-          <imgCard
+      <Container
+    >
+        <Header score={this.state.score} highscore={this.state.highscore}>Clicky Game</Header>
+        {this.state.cards.map(card => (
+          <Card
             clickCount={this.clickCount}
-            id={imgCard.id}
-            key={imgCard.id}
-            imageUrl={imgCard.imageUrl}
+            id={card.id}
+            key={card.id}
+            imageUrl={card.imageUrl}
           />
         ))}
-      </gameContainer>
+      </Container
+    >
     );
   }
 }
 
 export default App;
-
